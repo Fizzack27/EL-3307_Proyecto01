@@ -1,14 +1,38 @@
-IO_LOC  "Comutador_4[0]" 69;
-IO_PORT "Comutador_4[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_LOC  "conmutador_8[0]" 77;
+IO_PORT "conmutador_8[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "Comutador_4[1]" 68;
-IO_PORT "Comutador_4[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_LOC  "conmutador_8[1]" 76;
+IO_PORT "conmutador_8[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "Comutador_4[2]" 57;
-IO_PORT "Comutador_4[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_LOC  "conmutador_8[2]" 75;
+IO_PORT "conmutador_8[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "Comutador_4[3]" 56;
-IO_PORT "Comutador_4[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_LOC  "conmutador_8[3]" 74;
+IO_PORT "conmutador_8[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_8[4]" 73;
+IO_PORT "conmutador_8[4]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_8[5]" 72;
+IO_PORT "conmutador_8[5]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_8{6}" 71;
+IO_PORT "conmutador_8{6}" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_8[7]" 70;
+IO_PORT "conmutador_8[7]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_4[0]" 69;
+IO_PORT "conmutador_4[0]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_4[1]" 68;
+IO_PORT "conmutador_4[1]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_4[2]" 57;
+IO_PORT "conmutador_4[2]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+
+IO_LOC  "conmutador_4[3]" 56;
+IO_PORT "conmutador_4[3]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
 IO_LOC  "led[0]" 10;
 IO_PORT "led[0]" DRIVE=8 IO_TYPE=LVCMOS18;
