@@ -1,7 +1,7 @@
 // Detecta la palabra recibida y calcula el sindrome de esta
 module modulo_02(
     input logic [7:0] conmutador_8, // Palabra recibida conmutador 8
-    output logic [3:0] sindorme_detec, // Sindrome palabra recibida
+    output logic [3:0] sindrome_detec, // Sindrome palabra recibida
 );
     // Se hace una copia de la palabra recibida (wr) por el conmutador 8
     //      7 |  6 |  5 |  4 |  3 |  2 |  1 |  0 | # bits
@@ -27,6 +27,6 @@ module modulo_02(
     // Orden Sindrome
     //  3|  2|  1|  0| # bits
     // g0| s2| s1| s0|
-    assign sindorme_detec = {g1, c2, c1, c0};
+    assign sindrome_detec = {g1, c2, c1, c0};
 
 endmodule

@@ -18,15 +18,15 @@ module modulo_04 (
     // Se crea una mascara de error para definir el tipo de error
     assign mascara_error = (pos_error == 4'b0000) ? 8'b00000000 : // 0 errores
                            (pos_error == 4'b1000) ? 8'b10000000 : // 1 error bit global 
-                           (pos_error != 4'b0001) ? 8'b01111111 : // 2 errores
-                           (pos_error != 4'b0000) ?(8'b00000001 << (error_bit - 1)); // error en error_bit
+                           ((pos_error != 4'b1000) & (pos_error[4] == 1'b0)) ? 8'b01111111 : // 2 errores
+                           ((pos_error != 4'b0000) & (pos_error[4] == 1'b1)) ?(8'b00000001 << (error_bit - 1)); // error en error_bit
 
     // Se corrige la palabra recibida
     assign palabra = conmutador_8 ^ mascara_error;
 
     // Se obtienen los bits de informacion y se informa si hay 2 errores 
     assign w_corregida_b4[4] = (mascara_error == 8'b01111111) ? 1'b1 : 1'b0; // 1 = 2 errores
-    assign w_corregida_b4[3] = palabra[6];
+    assign w_corregida_b4[3] = palabra[6]; // bit de error: 1 = error
     assign w_corregida_b4[2] = palabra[5];
     assign w_corregida_b4[1] = palabra[4];
     assign w_corregida_b4[0] = palabra[2];
