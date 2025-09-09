@@ -25,7 +25,7 @@ module modulo_04 (
     assign palabra = conmutador_8 ^ mascara_error;
 
     // Se obtienen los bits de informacion y se informa si hay 2 errores 
-    assign w_corregida_b4[4] = (mascara_error == 8'b01111111) ? 1'b1 : 1'b0;
+    assign w_corregida_b4[4] = (mascara_error == 8'b01111111) ? 1'b1 : 1'b0; // 1 = 2 errores
     assign w_corregida_b4[3] = palabra[6];
     assign w_corregida_b4[2] = palabra[5];
     assign w_corregida_b4[1] = palabra[4];
