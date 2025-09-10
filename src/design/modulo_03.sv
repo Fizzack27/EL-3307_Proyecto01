@@ -6,7 +6,7 @@ module modulo_03 (
     //  3|  2|  1|  0|  # bits
     // g0| s2| s1| s0|
     // g1| c2| c1| c0| 
-    output [3:0] pos_error; // posicion en binario del error
+    output [3:0] pos_error // posicion en binario del error
 );
     // Se compara los bits de los sindromes y se obtiene la posicion del error
     // Orden Error
@@ -18,5 +18,5 @@ module modulo_03 (
         sindrome_ref[2] ^ sindrome_detec[2], // s2 ^ c2
         sindrome_ref[1] ^ sindrome_detec[1], // s1 ^ c1
         sindrome_ref[0] ^ sindrome_detec[0]  // s0 ^ c0
-    }
+    };
 endmodule

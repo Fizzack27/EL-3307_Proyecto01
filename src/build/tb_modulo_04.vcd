@@ -1,0 +1,62 @@
+$date
+	Wed Sep 10 01:50:06 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_modulo_04 $end
+$var wire 5 ! w_corregida_b4 [4:0] $end
+$var reg 8 " conmutador_8 [7:0] $end
+$var reg 4 # pos_error [3:0] $end
+$scope module dut $end
+$var wire 8 $ conmutador_8 [7:0] $end
+$var wire 4 % pos_error [3:0] $end
+$var wire 5 & w_corregida_b4 [4:0] $end
+$var wire 8 ' palabra [7:0] $end
+$var wire 8 ( mascara_error [7:0] $end
+$var wire 3 ) error_bit [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 )
+b10000000 (
+b1010010 '
+b1010 &
+b1000 %
+b11010010 $
+b1000 #
+b11010010 "
+b1010 !
+$end
+#10000
+b11010010 '
+b1010010 "
+b1010010 $
+#20000
+b1010 !
+b1010 &
+b100 (
+b11010010 '
+b11 )
+b1011 #
+b1011 %
+b11010110 "
+b11010110 $
+#30000
+b10000 !
+b10000 &
+b1111111 (
+b10000000 '
+b111 )
+b111 #
+b111 %
+b11011110 "
+b11011110 $

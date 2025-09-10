@@ -5,7 +5,7 @@ module modulo_01 (
     output logic [3:0] sindrome_ref // Sindrome de la palabra de referencia
 );
     logic w0, w1, w2, w3; // Indice de bits de la palabra (word)
-    assign {w0, w1, w2, w3} = Comutador_4; // Asignacion de los indice de bits
+    assign {w0, w1, w2, w3} = conmutador_4; // Asignacion de los indice de bits
 
     // Se calcula la paridad de los bits (p) y global (g0) paridad con todos los datos de la palabra codificada 
     logic p0, p1, p2, g0;
@@ -18,7 +18,7 @@ module modulo_01 (
     //  7 |  6 |  5 |  4 |  3 |  2 |  1 |  0 | # bits
     // g0 | w3 | w2 | w1 | p2 | w0 | p1 | p0 |
     logic [7:0] hamming;
-    assign hamming = {g0, w3, w2, w1, p2, w0, p1, p0}
+    assign hamming = {g0, w3, w2, w1, p2, w0, p1, p0};
 
     // Calculo del sindrome de la paralabra
     logic s0, s1, s2;

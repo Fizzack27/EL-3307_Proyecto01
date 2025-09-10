@@ -1,0 +1,60 @@
+$date
+	Wed Sep 10 00:53:54 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_modulo_03 $end
+$var wire 4 ! pos_error [3:0] $end
+$var reg 4 " sindrome_detec [3:0] $end
+$var reg 4 # sindrome_ref [3:0] $end
+$scope module dut $end
+$var wire 4 $ sindrome_detec [3:0] $end
+$var wire 4 % sindrome_ref [3:0] $end
+$var wire 4 & pos_error [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+b0 %
+b0 $
+b0 #
+b0 "
+b0 !
+$end
+#10000
+b1 !
+b1 &
+b1 "
+b1 $
+#20000
+b11 !
+b11 &
+b11 "
+b11 $
+#30000
+b1000 !
+b1000 &
+b1000 "
+b1000 $
+#40000
+b1010 !
+b1010 &
+b1010 "
+b1010 $
+#50000
+b1011 !
+b1011 &
+b110 "
+b110 $
+b1101 #
+b1101 %
+#60000

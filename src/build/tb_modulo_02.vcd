@@ -1,0 +1,105 @@
+$date
+	Wed Sep 10 00:45:38 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_modulo_02 $end
+$var wire 4 ! sindrome_detec [3:0] $end
+$var reg 8 " conmutador_8 [7:0] $end
+$scope module dut $end
+$var wire 1 # c0 $end
+$var wire 1 $ c1 $end
+$var wire 1 % c2 $end
+$var wire 8 & conmutador_8 [7:0] $end
+$var wire 1 ' g1 $end
+$var wire 1 ( wr7 $end
+$var wire 1 ) wr6 $end
+$var wire 1 * wr5 $end
+$var wire 1 + wr4 $end
+$var wire 1 , wr3 $end
+$var wire 1 - wr2 $end
+$var wire 1 . wr1 $end
+$var wire 1 / wr0 $end
+$var wire 4 0 sindrome_detec [3:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 0
+1/
+0.
+1-
+1,
+0+
+1*
+0)
+0(
+0'
+b101101 &
+0%
+0$
+0#
+b101101 "
+b0 !
+$end
+#10000
+1'
+1$
+b1011 !
+b1011 0
+1#
+0-
+b101001 "
+b101001 &
+#20000
+b1001 !
+b1001 0
+0$
+1-
+0/
+b101100 "
+b101100 &
+#30000
+b1011 !
+b1011 0
+1$
+1(
+0-
+1/
+b10101001 "
+b10101001 &
+#40000
+0#
+0'
+b0 !
+b0 0
+0$
+0(
+0*
+0,
+0/
+b0 "
+b0 &
+#50000
+b1000 !
+b1000 0
+1'
+1(
+1)
+1*
+1+
+1,
+1-
+1.
+1/
+b11111111 "
+b11111111 &
+#60000
