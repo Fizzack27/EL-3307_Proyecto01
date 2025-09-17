@@ -1,4 +1,4 @@
-# Nombre del proyecto
+# Proyecto corto I: Diseño digital combinacional en dispositivos programables
 
 ## 1. Abreviaturas y definiciones
 - **FPGA**: Field Programmable Gate Arrays
