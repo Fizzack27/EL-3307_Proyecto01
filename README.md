@@ -66,6 +66,37 @@ module mi_modulo(
 
 ### 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
 
+En el modulo_04 se corrigen los bits usando la información del síndrome.
+Por ejemplo, pensemos en la paridad P0.
+En la versión original se definía como:
+
+P0 = w0 ⊕ 𝑤1 ⊕ 𝑤 3
+
+Al expresarlo en álgebra booleana tradicional:
+
+          _________           _________
+p0=( w0 * (w1 * w3) )+( w0 * ( w1 * w3) )+(
+w0
+w1
+w3)+(w0w1w3)
+
+Al aplicar mapa de Karnaugh de 3 variables (w0, w1, w3), se ve que la expresión se reduce al XOR de las tres entradas:
+
+𝑝
+0
+=
+𝑤
+0
+⊕
+𝑤
+1
+⊕
+𝑤
+3
+p0=w0⊕w1⊕w3
+
+Esto muestra cómo se pasa de una expresión con 4 minterms a una sola operación XOR.
+
 ### 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
 
 ## 5. Parametros
