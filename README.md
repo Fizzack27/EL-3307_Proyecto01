@@ -86,20 +86,29 @@ Esto muestra cómo se pasa de una expresión con 4 minterms a una sola operació
 
 En caso de tener 4 bits de salida corregidos D3D2D1D0 y se pretende encender un LED indicador cuando el número binario es mayor que 9 (para representar A–F en hexadecimal). La tabla de verdad asociada corresponde a;
 
+<img width="325" height="142" alt="Captura de Pantalla 2025-09-18 a la(s) 8 38 52 a  m" src="https://github.com/user-attachments/assets/e6310ca8-e873-4d35-93d2-88cd1f28fd79" />
+
+Ecuación booleana inicial (suma de minterms):
+LED= (D3 * D2' * D1 * D0') + (D3 * D2' * D1 * D0) + (D3 * D2 * D1' * D0') + (D3 * D2 * D1' * D0) + (D3 * D2 * D1 * D0') + (D3 * D2 * D1 * D0)
+
+Se puede simplicar a;
+
+LED = D3 * (D2 + D1)
 
 
-## 5. Parametros
+## 5. Parametros (eliminar)
 
 - Lista de parámetros
 
-## 6. Entradas y salidas:
+## 6. Entradas y salidas: (eliminar)
 - `entrada_i`: descripción de la entrada
 - `salida_o`: descripción de la salida
 
-## 7. Criterios de diseño
+## 7. Criterios de diseño (eliminar)
 Diagramas, texto explicativo...
 
-## 8. Testbench
+## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
+
 Descripción y resultados de las pruebas hechas
 
 ## 9. Oscilador de anillo
@@ -131,7 +140,7 @@ T = 62.34 nS
 Cada inversor tiene un tiempo de retatrdo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
 
 
-## 10. Consumo de recursos
+## 10. Consumo de recursos 
 
 ## 11. Problemas encontrados durante el proyecto
 
