@@ -64,7 +64,7 @@ module mi_modulo(
 
 
 
-### 4. Simplificacion de ecuaciones booleanas 
+## 4. Simplificacion de ecuaciones booleanas 
 
 #### 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
 
@@ -74,17 +74,17 @@ module mi_modulo(
 
 - Lista de parámetros
 
-#### 6. Entradas y salidas:
+## 6. Entradas y salidas:
 - `entrada_i`: descripción de la entrada
 - `salida_o`: descripción de la salida
 
-#### 7. Criterios de diseño
+### 7. Criterios de diseño
 Diagramas, texto explicativo...
 
-#### 8. Testbench
+### 8. Testbench
 Descripción y resultados de las pruebas hechas
 
-### 9. Oscilador de anillo
+## 9. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
 
 <img width="800" height="480" alt="DS04-3_inversores" src="https://github.com/user-attachments/assets/10fdd3ba-cf76-411b-bccb-b358e4304bd6" />
