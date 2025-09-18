@@ -53,29 +53,38 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 
 
-
 ### 3.1 Módulo 1
-#### 1. Encabezado del módulo
+#### -- Encabezado del módulo
 ```SystemVerilog
 module mi_modulo(
     input logic     entrada_i,      
     output logic    salida_i 
     );
 ```
-#### 2. Parámetros
+
+
+
+### 4. Simplificacion de ecuaciones booleanas 
+
+#### 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
+
+#### 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
+
+### 5. Parametros
+
 - Lista de parámetros
 
-#### 3. Entradas y salidas:
+#### 6. Entradas y salidas:
 - `entrada_i`: descripción de la entrada
 - `salida_o`: descripción de la salida
 
-#### 4. Criterios de diseño
+#### 7. Criterios de diseño
 Diagramas, texto explicativo...
 
-#### 5. Testbench
+#### 8. Testbench
 Descripción y resultados de las pruebas hechas
 
-### Oscilador de anillo
+### 9. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
 
 <img width="800" height="480" alt="DS04-3_inversores" src="https://github.com/user-attachments/assets/10fdd3ba-cf76-411b-bccb-b358e4304bd6" />
@@ -104,9 +113,9 @@ T = 62.34 nS
 Cada inversor tiene un tiempo de retatrdo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
 
 
-## 6. Consumo de recursos
+## 10. Consumo de recursos
 
-## 7. Problemas encontrados durante el proyecto
+## 11. Problemas encontrados durante el proyecto
 
 ## Apendices:
 ### Apendice 1:
