@@ -47,6 +47,7 @@ Finalmente, se extraen los 4 bits de datos corregidos (D1..D4).
 Los 4 bits de datos corregidos se muestran en un conjunto de LEDs, permitiendo observar el valor binario restaurado.
 Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opcional, el circuito puede mostrar tanto la palabra recibida como la palabra corregida, mediante un selector (switch).
 
+### 3.2 Diagramas de bloques de cada subsistema
 
 ### 3.1 Módulo 1
 #### 1. Encabezado del módulo
