@@ -54,7 +54,7 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 
 ### 3.1 Módulo 1
-#### -- Encabezado del módulo
+### -- Encabezado del módulo
 ```SystemVerilog
 module mi_modulo(
     input logic     entrada_i,      
@@ -62,15 +62,13 @@ module mi_modulo(
     );
 ```
 
-
-
 ## 4. Simplificacion de ecuaciones booleanas 
 
-#### 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
+## 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
 
-#### 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
+## 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
 
-### 5. Parametros
+## 5. Parametros
 
 - Lista de parámetros
 
@@ -78,10 +76,10 @@ module mi_modulo(
 - `entrada_i`: descripción de la entrada
 - `salida_o`: descripción de la salida
 
-### 7. Criterios de diseño
+## 7. Criterios de diseño
 Diagramas, texto explicativo...
 
-### 8. Testbench
+## 8. Testbench
 Descripción y resultados de las pruebas hechas
 
 ## 9. Oscilador de anillo
