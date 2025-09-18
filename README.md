@@ -53,7 +53,7 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 
 
-### 3.1 Módulo 1
+### 3.1 Módulos
 ### -- Encabezado del módulo
 ```SystemVerilog
 module mi_modulo(
