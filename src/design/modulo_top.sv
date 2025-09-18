@@ -18,11 +18,11 @@ module modulo_top (
     );
     modulo_02 receptor (
         .conmutador_8 (conmutador_8),
-        .sindorme_detec (sindrome_detec)
+        .sindrome_detec (sindrome_detec)
     );
     modulo_03 comparador (
         .sindrome_ref (sindrome_ref),
-        .sindorme_detec (sindrome_detec),
+        .sindrome_detec (sindrome_detec),
         .pos_error (pos_error)
     );
     modulo_04 corrector (

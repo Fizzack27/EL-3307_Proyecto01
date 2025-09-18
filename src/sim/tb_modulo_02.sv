@@ -17,22 +17,22 @@ module tb_modulo_02;
         $display("==== INICIO DE SIMULACION TESTBENCH modulo_02 ====");
         
         // Caso 1: palabra sin error (ejemplo: 0b01100101)
-        conmutador_8 = 8'b00101101; // g0=0, w3=1, w2=1, w1=0, p2=0, w0=1, p1=0, p0=1
+        conmutador_8 = 8'b11100001; // 1000
         #10;
         $display("Caso 1: conmutador_8=%b => sindrome=%b", conmutador_8, sindrome_detec);
 
         // Caso 2: error en un bit de datos (ejemplo: bit w2 cambiado)
-        conmutador_8 = 8'b00101001; // bit5 alterado
+        conmutador_8 = 8'b11000001; // bit5 alterado: 0110
         #10;
         $display("Caso 2: conmutador_8=%b => sindrome=%b", conmutador_8, sindrome_detec);
 
         // Caso 3: error en un bit de paridad (ejemplo: p1 cambiado)
-        conmutador_8 = 8'b00101100; // bit1 alterado
+        conmutador_8 = 8'b11101001; // bit1 alterado: 0100
         #10;
         $display("Caso 3: conmutador_8=%b => sindrome=%b", conmutador_8, sindrome_detec);
 
         // Caso 4: error doble (ejemplo: w0 y p2 cambiados)
-        conmutador_8 = 8'b10101001; 
+        conmutador_8 = 8'b10000001; // 1001
         #10;
         $display("Caso 4: conmutador_8=%b => sindrome=%b", conmutador_8, sindrome_detec);
 

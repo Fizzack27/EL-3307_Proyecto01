@@ -21,31 +21,42 @@ module tb_modulo_04;
         $display("Tiempo\tconmutador_8\tpos_error\tw_corregida_b4");
 
         // Caso 1: Sin error
-        conmutador_8 = 8'b11010010; // palabra de ejemplo
-        pos_error = 4'b1000;        // 0 errores
+        conmutador_8 = 8'b11100001; // palabra de ejemplo
+        pos_error = 4'b0000;        // 0 errores
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
 
-        // Caso 2: Error en bit global (bit 7)
-        conmutador_8 = 8'b01010010;
-        pos_error = 4'b1000;        // error en bit global
+        // Caso 2: Error w0
+        conmutador_8 = 8'b11100101;
+        pos_error = 4'b1011;
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
 
-        // Caso 3: Error único en bit 6 (w3)
-        conmutador_8 = 8'b11010110;
-        pos_error = 4'b1011;        // error en bit 6
+        // Caso 3: Error w1
+        conmutador_8 = 8'b11110001;
+        pos_error = 4'b1101;
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
 
-        // Caso 4: Dos errores
-        conmutador_8 = 8'b11011110;
-        pos_error = 4'b0111;        // dos errores (simulación)
+        // Caso 4: Error w2
+        conmutador_8 = 8'b11000001;
+        pos_error = 4'b1110;
+        #10;
+        $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
+        
+        // Caso 5: Error w3
+        conmutador_8 = 8'b10100001;
+        pos_error = 4'b1111;
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
 
+        // Caso 4: 2 Errores
+        conmutador_8 = 8'b10000001;
+        pos_error = 4'b0001;
+        #10;
+        $display("%0t\t%b\t%b\t%b", $time, conmutador_8, pos_error, w_corregida_b4);
         // Finalizar simulación
-        $stop;
+        $finish;
     end
         initial begin
         $dumpfile("tb_modulo_04.vcd"); // archivo para GTKWave

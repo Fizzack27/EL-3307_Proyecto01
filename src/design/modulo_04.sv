@@ -19,8 +19,7 @@ module modulo_04 (
     assign mascara_error = (pos_error == 4'b0000) ? 8'b00000000 : // 0 errores
                            (pos_error == 4'b1000) ? 8'b10000000 : // 1 error bit global 
                            ((pos_error != 4'b1000) && (pos_error[3] == 1'b0)) ? 8'b01111111 : // 2 errores
-                           ((pos_error != 4'b0000) && (pos_error[3] == 1'b1)) ? (8'b00000001 << (error_bit - 1)) :
-                           8'b00000000; // error en error_bit
+                           (8'b00000001 << (error_bit - 1)); // error en error_bit
 
     // Se corrige la palabra recibida
     assign palabra = (mascara_error == 8'b01111111) ? 8'b10000000 : conmutador_8 ^ mascara_error;
@@ -37,5 +36,5 @@ endmodule
 //  7 |  6 |  5 |  4 |  3 |  2 |  1 |  0 | # bits
 // g0 | w3 | w2 | w1 | p2 | w0 | p1 | p0 | palabra recibida
 //                   | eg | e2 | e1 | e0 | pos_error 
-//                        | e2 | e1 | e0 |  error_bit
+//                        | e2 | e1 | e0 | error_bit
 //              |  e | w3 | w2 | w1 | w0 | w_corregida_b4 

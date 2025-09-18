@@ -22,33 +22,33 @@ module tb_modulo_03;
         $display("Tiempo | sind_ref | sind_det | pos_error");
 
         // Caso 1: Palabra sin errores (síndromes iguales)
-        sindrome_ref   = 4'b0000;  
-        sindrome_detec = 4'b0000;  
-        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
-
-        // Caso 2: Error en bit 1 (LSB)
-        sindrome_ref   = 4'b0000;
-        sindrome_detec = 4'b0001;  
-        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
-
-        // Caso 3: Error en bit 3
-        sindrome_ref   = 4'b0000;
-        sindrome_detec = 4'b0011;  
-        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
-
-        // Caso 4: Error global de paridad
-        sindrome_ref   = 4'b0000;
+        sindrome_ref   = 4'b1000;  
         sindrome_detec = 4'b1000;  
         #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
 
-        // Caso 5: Error combinado (bit 2 + global)
-        sindrome_ref   = 4'b0000;
-        sindrome_detec = 4'b1010;  
+        // Caso 2: Error en bit w0
+        sindrome_ref   = 4'b1000;
+        sindrome_detec = 4'b0011;  
         #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
 
-        // Caso 6: Comparación con sindromes distintos arbitrarios
-        sindrome_ref   = 4'b1101;
+        // Caso 3: Error en bit w1
+        sindrome_ref   = 4'b1000;
+        sindrome_detec = 4'b0101;  
+        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
+
+        // Caso 4: Error en bit w2
+        sindrome_ref   = 4'b1000;
         sindrome_detec = 4'b0110;  
+        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
+
+        // Caso 5: Error en bit w3
+        sindrome_ref   = 4'b1000;
+        sindrome_detec = 4'b0111;  
+        #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
+
+        // Caso 6: Comparación con 2 errores 
+        sindrome_ref   = 4'b1000;
+        sindrome_detec = 4'b1001;  
         #10 $display("%4t   | %b   | %b   | %b", $time, sindrome_ref, sindrome_detec, pos_error);
 
         $display("==== FIN SIMULACION modulo_03 ====");
