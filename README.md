@@ -64,9 +64,9 @@ module mi_modulo(
 
 ## 4. Simplificacion de ecuaciones booleanas 
 
-## 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
+### 4.1 Ejemplo de la simplificación de las ecuaciones booleanas usadas para el circuito corrector de error.
 
-## 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
+### 4.2 Ejemplo de la simplificación de las ecuaciones booleanas usadas para los leds o de los 7-segmentos
 
 ## 5. Parametros
 
