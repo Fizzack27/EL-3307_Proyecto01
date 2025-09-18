@@ -12,6 +12,8 @@ https://www.youtube.com/watch?v=AKO-SaOM7BA.
 [2] David Medina. Wiki tutorial sobre el uso de la TangNano 9k y el flujo abierto de herramientas. Mayo de
 2024. url: https://github.com/DJosueMM/open_source_fpga_environment/wiki
 
+[4] razavi b. (2013) fundamentals of microelectronics. segunda edición. john wiley & sons
+
 ## 3. Desarrollo
 
 ### 3.0 Descripción general del sistema
@@ -49,6 +51,9 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 ### 3.2 Diagramas de bloques de cada subsistema
 
+
+
+
 ### 3.1 Módulo 1
 #### 1. Encabezado del módulo
 ```SystemVerilog
@@ -70,13 +75,38 @@ Diagramas, texto explicativo...
 #### 5. Testbench
 Descripción y resultados de las pruebas hechas
 
-### Otros modulos
-- agregar informacion siguiendo el ejemplo anterior.
+### Oscilador de anillo
+Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
+
+<img width="800" height="480" alt="DS04-3_inversores" src="https://github.com/user-attachments/assets/10fdd3ba-cf76-411b-bccb-b358e4304bd6" />
+
+Con esto se puede calcular el tiempo de propagación promedio del inversor TTL;
+
+T = 1/f = 1/9.7 MHz
+
+T = 103.09 nS
+
+T = 2*N*tpd
+
+103.09 nS = 2 * 5 * tpd
+
+tpd = 103.09 ns/ 10
+
+tpd = 10.39 nS
 
 
-## 4. Consumo de recursos
+Para un oscilador de 3 inversores, el periodo de oscilacion deberia ser;
 
-## 5. Problemas encontrados durante el proyecto
+T = 2 * 3 * 10.39 nS
+
+T = 62.34 nS
+
+Cada inversor tiene un tiempo de retatrdo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
+
+
+## 6. Consumo de recursos
+
+## 7. Problemas encontrados durante el proyecto
 
 ## Apendices:
 ### Apendice 1:
