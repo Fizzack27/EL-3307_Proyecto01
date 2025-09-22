@@ -2,7 +2,8 @@
 module modulo_01 (
     input logic [3:0] conmutador_4, // Palabra obtenida del comutador 4
     
-    output logic [3:0] sindrome_ref // Sindrome de la palabra de referencia
+    output logic [3:0] sindrome_ref
+    //output logic [3:0] sindrome_ref // Sindrome de la palabra de referencia
 );
     logic w3, w2, w1, w0; // Indice de bits de la palabra (word)
     assign {w3, w2, w1, w0} = conmutador_4; // Asignacion de los indice de bits

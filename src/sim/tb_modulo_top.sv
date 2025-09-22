@@ -30,31 +30,31 @@ module tb_modulo_top;
 
         // Caso 2: un error en un bit de la palabra recibida
         conmutador_4 = 4'b1100; // palabra transmitida
-        conmutador_8 = 8'b11100101; // misma palabra codificada sin error (w0)
+        conmutador_8 = 8'b11100101; // misma palabra codificada con error (w0)
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_4, conmutador_8, led);
 
         // Caso 3: un error en un bit de la palabra recibida
         conmutador_4 = 4'b1100; // palabra transmitida
-        conmutador_8 = 8'b11110001; // misma palabra codificada sin error (w1)
+        conmutador_8 = 8'b11110001; // misma palabra codificada con error (w1)
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_4, conmutador_8, led);
 
         // Caso 4: un error en un bit de la palabra recibida
         conmutador_4 = 4'b1100; // palabra transmitida
-        conmutador_8 = 8'b11000001; // misma palabra codificada sin error (w2)
+        conmutador_8 = 8'b11000001; // misma palabra codificada con error (w2)
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_4, conmutador_8, led);
 
         // Caso 5: un error en un bit de la palabra recibida
         conmutador_4 = 4'b1100; // palabra transmitida 
-        conmutador_8 = 8'b10100001; // misma palabra codificada sin error (w3)
+        conmutador_8 = 8'b10100001; // misma palabra codificada con error (w3)
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_4, conmutador_8, led);
 
         // Caso 6: 2 errores 
         conmutador_4 = 4'b1100; // palabra transmitida 
-        conmutador_8 = 8'b10000001; // misma palabra codificada sin error (w3 , w2)
+        conmutador_8 = 8'b10000001; // misma palabra codificada con error (w3 , w2)
         #10;
         $display("%0t\t%b\t%b\t%b", $time, conmutador_4, conmutador_8, led);
 

@@ -1,5 +1,5 @@
 $date
-	Thu Sep 18 04:34:56 2025
+	Mon Sep 22 01:47:13 2025
 $end
 $version
 	Icarus Verilog
@@ -12,60 +12,70 @@ $var wire 5 ! led [4:0] $end
 $var reg 4 " conmutador_4 [3:0] $end
 $var reg 8 # conmutador_8 [7:0] $end
 $scope module dut $end
-$var wire 4 $ conmutador_4 [3:0] $end
-$var wire 8 % conmutador_8 [7:0] $end
-$var wire 5 & w_corregida_b4 [4:0] $end
-$var wire 4 ' sindrome_ref [3:0] $end
-$var wire 4 ( sindrome_detec [3:0] $end
-$var wire 4 ) pos_error [3:0] $end
-$var wire 5 * led [4:0] $end
+$var wire 1 $ clk $end
+$var wire 4 % conmutador_4 [3:0] $end
+$var wire 8 & conmutador_8 [7:0] $end
+$var wire 5 ' w_corregida_b4 [4:0] $end
+$var wire 4 ( sindrome_ref [3:0] $end
+$var wire 4 ) sindrome_detec [3:0] $end
+$var wire 7 * seven [6:0] $end
+$var wire 4 + pos_error [3:0] $end
+$var wire 5 , led [4:0] $end
+$var wire 2 - anodo [1:0] $end
 $scope module codificador $end
-$var wire 4 + conmutador_4 [3:0] $end
-$var wire 1 , g0 $end
-$var wire 1 - p0 $end
-$var wire 1 . p1 $end
-$var wire 1 / p2 $end
-$var wire 1 0 s0 $end
-$var wire 1 1 s1 $end
-$var wire 1 2 s2 $end
-$var wire 1 3 w3 $end
-$var wire 1 4 w2 $end
-$var wire 1 5 w1 $end
-$var wire 1 6 w0 $end
-$var wire 4 7 sindrome_ref [3:0] $end
+$var wire 4 . conmutador_4 [3:0] $end
+$var wire 1 / g0 $end
+$var wire 1 0 p0 $end
+$var wire 1 1 p1 $end
+$var wire 1 2 p2 $end
+$var wire 1 3 s0 $end
+$var wire 1 4 s1 $end
+$var wire 1 5 s2 $end
+$var wire 1 6 w3 $end
+$var wire 1 7 w2 $end
+$var wire 1 8 w1 $end
+$var wire 1 9 w0 $end
+$var wire 4 : sindrome_ref [3:0] $end
 $upscope $end
 $scope module comparador $end
-$var wire 4 8 sindrome_ref [3:0] $end
-$var wire 4 9 sindrome_detec [3:0] $end
-$var wire 4 : pos_error [3:0] $end
+$var wire 4 ; sindrome_ref [3:0] $end
+$var wire 4 < sindrome_detec [3:0] $end
+$var wire 4 = pos_error [3:0] $end
 $upscope $end
 $scope module corrector $end
-$var wire 8 ; conmutador_8 [7:0] $end
-$var wire 4 < pos_error [3:0] $end
-$var wire 5 = w_corregida_b4 [4:0] $end
-$var wire 8 > palabra [7:0] $end
-$var wire 8 ? mascara_error [7:0] $end
-$var wire 3 @ error_bit [2:0] $end
+$var wire 8 > conmutador_8 [7:0] $end
+$var wire 4 ? pos_error [3:0] $end
+$var wire 5 @ w_corregida_b4 [4:0] $end
+$var wire 8 A palabra [7:0] $end
+$var wire 8 B mascara_error [7:0] $end
+$var wire 3 C error_bit [2:0] $end
+$upscope $end
+$scope module disp_hex $end
+$var wire 5 D w_corregida_b4 [4:0] $end
+$var reg 2 E anodo [1:0] $end
+$var reg 7 F seven [6:0] $end
+$scope function hex_to_seg_n $end
+$upscope $end
 $upscope $end
 $scope module pintar_palabra $end
-$var wire 5 A led [4:0] $end
-$var wire 5 B w_corregida_b4 [4:0] $end
+$var wire 5 G led [4:0] $end
+$var wire 5 H w_corregida_b4 [4:0] $end
 $upscope $end
 $scope module receptor $end
-$var wire 1 C c0 $end
-$var wire 1 D c1 $end
-$var wire 1 E c2 $end
-$var wire 8 F conmutador_8 [7:0] $end
-$var wire 1 G g1 $end
-$var wire 1 H wr7 $end
-$var wire 1 I wr6 $end
-$var wire 1 J wr5 $end
-$var wire 1 K wr4 $end
-$var wire 1 L wr3 $end
-$var wire 1 M wr2 $end
-$var wire 1 N wr1 $end
-$var wire 1 O wr0 $end
-$var wire 4 P sindrome_detec [3:0] $end
+$var wire 1 I c0 $end
+$var wire 1 J c1 $end
+$var wire 1 K c2 $end
+$var wire 8 L conmutador_8 [7:0] $end
+$var wire 1 M g1 $end
+$var wire 1 N wr7 $end
+$var wire 1 O wr6 $end
+$var wire 1 P wr5 $end
+$var wire 1 Q wr4 $end
+$var wire 1 R wr3 $end
+$var wire 1 S wr2 $end
+$var wire 1 T wr1 $end
+$var wire 1 U wr0 $end
+$var wire 4 V sindrome_detec [3:0] $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -75,201 +85,237 @@ $dumpall
 $end
 #0
 $dumpvars
-b1000 P
+b1000 V
+1U
+0T
+0S
+0R
+0Q
+1P
 1O
-0N
-0M
-0L
+1N
+1M
+b11100001 L
 0K
-1J
-1I
-1H
-1G
-b11100001 F
-0E
-0D
-0C
-b1100 B
-b10011 A
-b0 @
+0J
+0I
+b1100 H
+b10011 G
+b110001 F
+b10 E
+b1100 D
+b0 C
+b0 B
+b11100001 A
+b1100 @
 b0 ?
 b11100001 >
-b1100 =
-b0 <
-b11100001 ;
-b0 :
-b1000 9
-b1000 8
-b1000 7
-06
+b0 =
+b1000 <
+b1000 ;
+b1000 :
+09
+08
+17
+16
 05
-14
-13
+04
+03
 02
 01
-00
-0/
-0.
-1-
-1,
-b1100 +
-b10011 *
-b0 )
+10
+1/
+b1100 .
+b10 -
+b10011 ,
+b0 +
+b110001 *
+b1000 )
 b1000 (
-b1000 '
-b1100 &
-b11100001 %
-b1100 $
+b1100 '
+b11100001 &
+b1100 %
+z$
 b11100001 #
 b1100 "
 b10011 !
 $end
 #10000
-b11 @
-b100 ?
-0G
-b1011 )
-b1011 :
-b1011 <
-b10011 !
-b10011 *
-b10011 A
-1D
-b11 (
-b11 9
-b11 P
-1C
-b1100 &
-b1100 =
-b1100 B
-b11100001 >
-1M
-b11100101 #
-b11100101 %
-b11100101 ;
-b11100101 F
-#20000
-b10000 ?
-b101 @
-b1101 )
-b1101 :
-b1101 <
-b10011 !
-b10011 *
-b10011 A
-0G
-1E
-b101 (
-b101 9
-b101 P
-0D
-b1100 &
-b1100 =
-b1100 B
-b11100001 >
-1K
+b11 C
+b100 B
 0M
-b11110001 #
-b11110001 %
-b11110001 ;
-b11110001 F
-#30000
-b100000 ?
-b110 @
-b1110 )
-b1110 :
-b1110 <
+b1011 +
+b1011 =
+b1011 ?
 b10011 !
-b10011 *
-b10011 A
-b1100 &
-b1100 =
-b1100 B
-1D
-b110 (
-b110 9
-b110 P
-0C
-b11100001 >
-0J
-0K
-b11000001 #
-b11000001 %
-b11000001 ;
-b11000001 F
-#40000
-b1000000 ?
-b111 @
-b10011 !
-b10011 *
-b10011 A
-b1111 )
-b1111 :
-b1111 <
-b1100 &
-b1100 =
-b1100 B
-b11100001 >
-b111 (
-b111 9
-b111 P
-1C
-0I
+b10011 ,
+b10011 G
+b10 -
+b10 E
+b110001 *
+b110001 F
 1J
-b10100001 #
-b10100001 %
-b10100001 ;
-b10100001 F
-#50000
-b1111111 ?
-b1 @
-b1 )
-b1 :
-b1 <
-b1111 !
-b1111 *
-b1111 A
-b10000 &
-b10000 =
+b11 )
+b11 <
+b11 V
+1I
+b1100 '
+b1100 @
+b1100 D
+b1100 H
+b11100001 A
+1S
+b11100101 #
+b11100101 &
+b11100101 >
+b11100101 L
+#20000
 b10000 B
-1G
-0E
-b1001 (
-b1001 9
-b1001 P
-0D
-b10000000 >
+b101 C
+b1101 +
+b1101 =
+b1101 ?
+b10011 !
+b10011 ,
+b10011 G
+b10 -
+b10 E
+b110001 *
+b110001 F
+0M
+1K
+b101 )
+b101 <
+b101 V
 0J
+b1100 '
+b1100 @
+b1100 D
+b1100 H
+b11100001 A
+1Q
+0S
+b11110001 #
+b11110001 &
+b11110001 >
+b11110001 L
+#30000
+b100000 B
+b110 C
+b1110 +
+b1110 =
+b1110 ?
+b10011 !
+b10011 ,
+b10011 G
+b10 -
+b10 E
+b110001 *
+b110001 F
+b1100 '
+b1100 @
+b1100 D
+b1100 H
+1J
+b110 )
+b110 <
+b110 V
+0I
+b11100001 A
+0P
+0Q
+b11000001 #
+b11000001 &
+b11000001 >
+b11000001 L
+#40000
+b1000000 B
+b111 C
+b10011 !
+b10011 ,
+b10011 G
+b10 -
+b10 E
+b110001 *
+b110001 F
+b1111 +
+b1111 =
+b1111 ?
+b1100 '
+b1100 @
+b1100 D
+b1100 H
+b11100001 A
+b111 )
+b111 <
+b111 V
+1I
+0O
+1P
+b10100001 #
+b10100001 &
+b10100001 >
+b10100001 L
+#50000
+b1111111 B
+b1 C
+b1 +
+b1 =
+b1 ?
+b1111 !
+b1111 ,
+b1111 G
+b11 -
+b11 E
+b1111111 *
+b1111111 F
+b10000 '
+b10000 @
+b10000 D
+b10000 H
+1M
+0K
+b1001 )
+b1001 <
+b1001 V
+0J
+b10000000 A
+0P
 b10000001 #
-b10000001 %
-b10000001 ;
-b10000001 F
+b10000001 &
+b10000001 >
+b10000001 L
 #60000
 b10101 !
-b10101 *
-b10101 A
-b11010010 >
-b1010 &
-b1010 =
-b1010 B
+b10101 ,
+b10101 G
+b10 -
+b10 E
+b1000 *
+b1000 F
+b11010010 A
+b1010 '
+b1010 @
+b1010 D
+b1010 H
+b0 B
+b0 C
+b0 +
+b0 =
 b0 ?
-b0 @
-b0 )
-b0 :
-b0 <
-1G
-0E
-0D
-b1000 (
-b1000 9
-b1000 P
-0C
-1I
-1K
-1N
-0O
+1M
+0K
+0J
+b1000 )
+b1000 <
+b1000 V
+0I
+1O
+1Q
+1T
+0U
 b11010010 #
-b11010010 %
-b11010010 ;
-b11010010 F
+b11010010 &
+b11010010 >
+b11010010 L
 #70000

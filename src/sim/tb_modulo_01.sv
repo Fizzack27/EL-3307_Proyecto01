@@ -2,33 +2,32 @@
 
 module tb_modulo_01;
 
-    // Señales de entrada y salida
-    logic [3:0] conmutador_4;
-    logic [3:0] sindrome_ref;
+  // Estímulo y observación
+  logic [3:0] conmutador_4;   // -> entrada del DUT
+  logic [7:0] hamming;   // <- salida del DUT
 
-    // Instancia del DUT (Device Under Test)
-    modulo_01 dut (
-        .conmutador_4(conmutador_4),
-        .sindrome_ref(sindrome_ref)
-    );
+  // Instancia del DUT (tal cual tu encabezado)
+  modulo_01 dut (
+    .conmutador_4 (conmutador_4),
+    .hamming (hamming)
+  );
 
-    // Estímulos
-    initial begin
-        $display("Tiempo | conmutador_4 | sindrome_ref");
-        $display("------------------------------------");
+  // Barrido 0..15
+  initial begin
+    // (Opcional) VCD para GTKWave
+    $dumpfile("tb_modulo_01.vcd");
+    $dumpvars(0, tb_modulo_01);
 
-        // Probar todas las combinaciones posibles (16 valores de 4 bits)
-        for (int i = 0; i < 16; i++) begin
-            conmutador_4 = i;
-            #10; // Espera 10 ns para estabilidad
-            $display("%4t | %b | %b", $time, conmutador_4, sindrome_ref);
-        end
-
-        $finish; // Terminar simulación
+    // Recorrer todas las combinaciones de 4 bits
+    for (int i = 0; i < 16; i++) begin
+      conmutador_4 = i[3:0];
+      #2; // tiempo de asentamiento
+      $display("[%0t] in=%02d (b=%04b) -> hamming=%0h (b=%04b)",
+               $time, i, conmutador_4, hamming, hamming);
     end
-    initial begin
-        $dumpfile("tb_modulo_01.vcd"); // archivo para GTKWave
-        $dumpvars(0, tb_modulo_01);   // guarda todas las señales del testbench
-    end
+
+    $display(">>> Barrido completo (0..15).");
+    $finish;
+  end
 
 endmodule
