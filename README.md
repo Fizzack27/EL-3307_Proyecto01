@@ -86,7 +86,7 @@ w_corregida_b4 → modulo_05 → leds.
 Así se cierra toda la ruta de datos: desde la entrada de switches hasta la corrección y visualización
 
 
-### 3.1 Módulos
+### 3.3 Módulos
 ### -- Encabezado del módulo
 ```SystemVerilog
 module mi_modulo(
@@ -131,7 +131,7 @@ LED = D3 * (D2 + D1)
 
 ## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
 
-Descripción y resultados de las pruebas hechas
+Descripción y resultados de las pruebas hechas 
 
 ## 9. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
