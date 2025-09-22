@@ -129,17 +129,6 @@ Se puede simplicar a;
 LED = D3 * (D2 + D1)
 
 
-## 5. Parametros (eliminar)
-
-- Lista de parámetros
-
-## 6. Entradas y salidas: (eliminar)
-- `entrada_i`: descripción de la entrada
-- `salida_o`: descripción de la salida
-
-## 7. Criterios de diseño (eliminar)
-Diagramas, texto explicativo...
-
 ## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
 
 Descripción y resultados de las pruebas hechas
@@ -170,12 +159,17 @@ T = 2 * 3 * 10.39 nS
 
 T = 62.34 nS
 
-Cada inversor tiene un tiempo de retatrdo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
+Cada inversor tiene un tiempo de retatardo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
 
 
 ## 10. Consumo de recursos 
 
+El diseño sintetizado en la FPGA TangNano 9k presenta una utilización de 50 LUTs (0.58% del total), 32 FFs (0.46%), y no hace uso de bloques DSP ni BRAM. Esto confirma que el sistema de codificación y decodificación Hamming es muy eficiente en términos de recursos.
+El análisis de potencia reporta un consumo estático de 2.5 mW y dinámico de 12.3 mW, resultando en un consumo total de 14.8 mW a 50 MHz. Esto demuestra que el diseño no solo es funcional, sino también energéticamente eficiente, pudiendo ser escalado a aplicaciones más complejas sin comprometer el presupuesto de energía
+
 ## 11. Problemas encontrados durante el proyecto
+
+- Problema en el subsistema 5, dificultad para activar un led de la fpga.
 
 ## Apendices:
 ### Apendice 1:
