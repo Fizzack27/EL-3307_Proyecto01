@@ -51,6 +51,39 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 ### 3.2 Diagramas de bloques de cada subsistema
 
+Subsistema 1; prepara una referencia de cómo debería lucir la palabra codificada si no hubiera errores.
+
+<img width="601" height="246" alt="Captura de Pantalla 2025-09-22 a la(s) 2 12 58 p  m" src="https://github.com/user-attachments/assets/d2cf3b4b-cb47-4eaf-a82f-c9a061f7d1d2" />
+
+Subsistema 2; analiza la palabra recibida y obtiene un síndrome que refleja posibles errores.
+
+<img width="605" height="185" alt="Captura de Pantalla 2025-09-22 a la(s) 2 13 34 p  m" src="https://github.com/user-attachments/assets/f69e0a13-dfc6-4bca-b15d-bcff8807ef1a" />
+
+Subsistema 3; localiza en qué bit está el error (si lo hay).
+
+<img width="607" height="230" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 13 p  m" src="https://github.com/user-attachments/assets/0a2939ef-41b9-43de-ba43-20b8953b866b" />
+
+Subsistema 4; reconstruye los datos originales corrigiendo un error simple o detectando un error doble.
+
+<img width="614" height="254" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 47 p  m" src="https://github.com/user-attachments/assets/d9d8915e-8534-4cc9-aa55-838576b52ecb" />
+
+Subsistema 5; despliega la palabra corregida y apaga LEDs si hubo error doble.
+
+<img width="603" height="165" alt="Captura de Pantalla 2025-09-22 a la(s) 2 16 01 p  m" src="https://github.com/user-attachments/assets/cd8ba9af-ba17-468a-bd42-6ee7f60c4c34" />
+
+Interconexion; 
+
+conmutador_4 → modulo_01 → sindrome_ref.
+
+conmutador_8 → modulo_02 → sindrome_detec.
+
+sindrome_ref y sindrome_detec → modulo_03 → pos_error.
+
+conmutador_8 y pos_error → modulo_04 → w_corregida_b4.
+
+w_corregida_b4 → modulo_05 → leds.
+
+Así se cierra toda la ruta de datos: desde la entrada de switches hasta la corrección y visualización
 
 
 ### 3.1 Módulos
