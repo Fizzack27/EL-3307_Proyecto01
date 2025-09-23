@@ -178,8 +178,7 @@ Cada inversor tiene un tiempo de retatardo asociado, al disminuir la cantidad de
 
 ## 10. Consumo de recursos 
 
-El diseño sintetizado en la FPGA TangNano 9k presenta una utilización de 50 LUTs (0.58% del total), 32 FFs (0.46%), y no hace uso de bloques DSP ni BRAM. Esto confirma que el sistema de codificación y decodificación Hamming es muy eficiente en términos de recursos.
-El análisis de potencia reporta un consumo estático de 2.5 mW y dinámico de 12.3 mW, resultando en un consumo total de 14.8 mW a 50 MHz. Esto demuestra que el diseño no solo es funcional, sino también energéticamente eficiente, pudiendo ser escalado a aplicaciones más complejas sin comprometer el presupuesto de energía
+
 
 ## 11. Problemas encontrados durante el proyecto
 
