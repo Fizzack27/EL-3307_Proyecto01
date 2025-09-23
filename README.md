@@ -131,7 +131,21 @@ LED = D3 * (D2 + D1)
 
 ## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
 
-Descripción y resultados de las pruebas hechas 
+El printf del testbench imprimió Tiempo, conmutador_4, conmutador_8 y led.
+Se observa que el testbench cambió valores cada 10 000 ps (10 ns).
+Al final, $finish se llamó en el tiempo 70 ns → por eso la simulación termina ahí.
+Esto confirma que la simulación está corriendo y guardando el .vcd.
+
+<img width="522" height="128" alt="Captura de Pantalla 2025-09-23 a la(s) 11 22 01 a  m" src="https://github.com/user-attachments/assets/95965d10-0527-4861-beb0-77f2690f8332" />
+
+Al ejecutar el make wv;
+Se abre el archivo tb_modulo_top.vcd en GTKWave.
+A la izquierda (SST) se tiene la jerarquia de señales (tb_modulo_top).
+En el centro, la lista de señales que se seleccionan.
+A la derecha, las formas de onda.
+
+<img width="1220" height="777" alt="Captura de Pantalla 2025-09-23 a la(s) 10 55 51 a  m" src="https://github.com/user-attachments/assets/a183c5f3-80b9-49ca-8ab9-2f05360a24ed" />
+
 
 ## 9. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
