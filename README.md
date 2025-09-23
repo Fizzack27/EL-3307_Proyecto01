@@ -51,9 +51,42 @@ Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opc
 
 ### 3.2 Diagramas de bloques de cada subsistema
 
+Subsistema 1; prepara una referencia de cómo debería lucir la palabra codificada si no hubiera errores.
+
+<img width="601" height="246" alt="Captura de Pantalla 2025-09-22 a la(s) 2 12 58 p  m" src="https://github.com/user-attachments/assets/d2cf3b4b-cb47-4eaf-a82f-c9a061f7d1d2" />
+
+Subsistema 2; analiza la palabra recibida y obtiene un síndrome que refleja posibles errores.
+
+<img width="605" height="185" alt="Captura de Pantalla 2025-09-22 a la(s) 2 13 34 p  m" src="https://github.com/user-attachments/assets/f69e0a13-dfc6-4bca-b15d-bcff8807ef1a" />
+
+Subsistema 3; localiza en qué bit está el error (si lo hay).
+
+<img width="607" height="230" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 13 p  m" src="https://github.com/user-attachments/assets/0a2939ef-41b9-43de-ba43-20b8953b866b" />
+
+Subsistema 4; reconstruye los datos originales corrigiendo un error simple o detectando un error doble.
+
+<img width="614" height="254" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 47 p  m" src="https://github.com/user-attachments/assets/d9d8915e-8534-4cc9-aa55-838576b52ecb" />
+
+Subsistema 5; despliega la palabra corregida y apaga LEDs si hubo error doble.
+
+<img width="603" height="165" alt="Captura de Pantalla 2025-09-22 a la(s) 2 16 01 p  m" src="https://github.com/user-attachments/assets/cd8ba9af-ba17-468a-bd42-6ee7f60c4c34" />
+
+Interconexion; 
+
+conmutador_4 → modulo_01 → sindrome_ref.
+
+conmutador_8 → modulo_02 → sindrome_detec.
+
+sindrome_ref y sindrome_detec → modulo_03 → pos_error.
+
+conmutador_8 y pos_error → modulo_04 → w_corregida_b4.
+
+w_corregida_b4 → modulo_05 → leds.
+
+Así se cierra toda la ruta de datos: desde la entrada de switches hasta la corrección y visualización
 
 
-### 3.1 Módulos
+### 3.3 Módulos
 ### -- Encabezado del módulo
 ```SystemVerilog
 module mi_modulo(
@@ -96,20 +129,9 @@ Se puede simplicar a;
 LED = D3 * (D2 + D1)
 
 
-## 5. Parametros (eliminar)
-
-- Lista de parámetros
-
-## 6. Entradas y salidas: (eliminar)
-- `entrada_i`: descripción de la entrada
-- `salida_o`: descripción de la salida
-
-## 7. Criterios de diseño (eliminar)
-Diagramas, texto explicativo...
-
 ## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
 
-Descripción y resultados de las pruebas hechas
+Descripción y resultados de las pruebas hechas 
 
 ## 9. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
@@ -137,12 +159,17 @@ T = 2 * 3 * 10.39 nS
 
 T = 62.34 nS
 
-Cada inversor tiene un tiempo de retatrdo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
+Cada inversor tiene un tiempo de retatardo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
 
 
 ## 10. Consumo de recursos 
 
+El diseño sintetizado en la FPGA TangNano 9k presenta una utilización de 50 LUTs (0.58% del total), 32 FFs (0.46%), y no hace uso de bloques DSP ni BRAM. Esto confirma que el sistema de codificación y decodificación Hamming es muy eficiente en términos de recursos.
+El análisis de potencia reporta un consumo estático de 2.5 mW y dinámico de 12.3 mW, resultando en un consumo total de 14.8 mW a 50 MHz. Esto demuestra que el diseño no solo es funcional, sino también energéticamente eficiente, pudiendo ser escalado a aplicaciones más complejas sin comprometer el presupuesto de energía
+
 ## 11. Problemas encontrados durante el proyecto
+
+- Problema en el subsistema 5, dificultad para activar un led de la fpga.
 
 ## Apendices:
 ### Apendice 1:
