@@ -1,3 +1,6 @@
+IO_LOC  "rst_n" 3;
+IO_PORT "rst_n" IO_TYPE=LVCMOS18;
+
 IO_LOC  "clk" 52;
 IO_PORT "clk" IO_TYPE=LVCMOS33 PULL_MODE=UP;
 
@@ -46,8 +49,8 @@ IO_PORT "conmutador_8[4]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 IO_LOC  "conmutador_8[5]" 75;
 IO_PORT "conmutador_8[5]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
-IO_LOC  "conmutador_8{6}" 76;
-IO_PORT "conmutador_8{6}" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
+IO_LOC  "conmutador_8[6]" 76;
+IO_PORT "conmutador_8[6]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;
 
 IO_LOC  "conmutador_8[7]" 77;
 IO_PORT "conmutador_8[7]" IO_TYPE=LVCMOS33 PULL_MODE=DOWN;

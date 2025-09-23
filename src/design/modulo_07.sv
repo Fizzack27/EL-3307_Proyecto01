@@ -36,14 +36,17 @@ module modulo_07
         .seven          (seven_w)
     );
 
-    logic [4:0] error_bit; 
-    assign error_bit = (w_corregida_b4 == 5'b10000) ? 5'b10000: {
+    logic [4:0] error_bit_before;
+    logic [4:0] error_bit;
+    assign error_bit_before = (w_corregida_b4 == 5'b10000) || (error_pos == 4'b0000) ? 5'b10000: {
         1'b0,
         1'b0,
         error_pos[2],
         error_pos[1],
         error_pos[0]
     }; // analiza si hay dos errores, caso contrario muestra la posicion del bit
+
+    assign error_bit = (error_bit_before == 5'b10000 ) || (error_bit_before == 5'b00000) ? error_bit_before: error_bit_before - 5'b00001; 
 
     modulo_06 u_hex_e (
         .w_corregida_b4 (error_bit),
