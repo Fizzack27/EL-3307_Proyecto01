@@ -130,17 +130,11 @@ conmutador_8 y pos_error → modulo_04 → w_corregida_b4.
 
 w_corregida_b4 → modulo_05 → leds.
 
+clk, rst, w_corregida_b4, error_pos → modulo_07 → anodo, seven
+
+El modulo 06 es llamado dentro del modulo 07 para pasar de binario a hexadecimal.
+
 Así se cierra toda la ruta de datos: desde la entrada de switches hasta la corrección y visualización
-
-
-### 3.3 Módulos
-### -- Encabezado del módulo
-```SystemVerilog
-module mi_modulo(
-    input logic     entrada_i,      
-    output logic    salida_i 
-    );
-```
 
 ## 4. Simplificacion de ecuaciones booleanas 
 
@@ -225,11 +219,41 @@ Cada inversor tiene un tiempo de retatardo asociado, al disminuir la cantidad de
 
 ## 10. Consumo de recursos 
 
+```
+Printing statistics.
 
+=== modulo_top ===
+
+   Number of wires:                266
+   Number of wire bits:            508
+   Number of public wires:         266
+   Number of public wire bits:     508
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                322
+     ALU                            24
+     DFFR                           15
+     DFFRE                           1
+     GND                             1
+     IBUF                           14
+     LUT1                           42
+     LUT2                           13
+     LUT3                           25
+     LUT4                           75
+     MUX2_LUT5                      62
+     MUX2_LUT6                      24
+     MUX2_LUT7                       9
+     MUX2_LUT8                       2
+     OBUF                           14
+     VCC                             1
+
+```
 
 ## 11. Problemas encontrados durante el proyecto
 
-- Problema en el subsistema 5, dificultad para activar un led de la fpga.
+- Problema en el subsistema 7 para encender los dos siete segmentos al mismo tiempo. El problema se corrgido al definir un número de pin para el reset en la fpga.
+- Problema para corregir la palabra recibida. El problema estaba causado por una mala definicion de los pines, se uso por error {} cuando de manera correcta es con [].
 
 ## Apendices:
 ### Apendice 1:
