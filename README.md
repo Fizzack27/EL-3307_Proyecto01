@@ -19,35 +19,82 @@ https://www.youtube.com/watch?v=AKO-SaOM7BA.
 ### 3.0 Descripción general del sistema
 
 El circuito implementa un sistema digital de transmisión y recepción de datos con detección y corrección de errores, basado en el código Hamming extendido (SECDED: Single Error Correction, Double Error Detection).
-El sistema se organiza en tres grandes bloques:
+El sistema se organiza en 7 grandes bloques:
 
-1) Codificador (Transmisor)
-Entrada: una palabra binaria de 4 bits, seleccionada mediante interruptores.
+1) Codificador (palabra correcta)
+Entrada: una palabra binaria de 4 bits, seleccionada mediante interruptores de 4 switch [[W3,W2,W1,W0]].
 Procesamiento:
-Se calculan tres bits de paridad (P1,P2,P3) utilizando compuertas XOR. Se calcula un bit de paridad global P0
-Salida: se forma una palabra de 8 bits en formato: [[P0,P1,P2,D1,P3,D2,D3,D4]]
-Esta palabra se envía al “canal” y puede ser visualizada en LEDs o enviada hacia un banco de interruptores que permiten inyectar errores (cambiar manualmente uno o más bits).
+Se calculan tres bits de paridad (P0,P1,P2) utilizando compuertas XOR. Se calcula un bit de paridad global G0
+Se forma una palabra de 8 bits en formato: [[G0,W3,W2,W1,P2,W0,P1,P0]] correspondiente al Hamming (7,4) codificado.  
+Salida: una palabra de 4 bits que corresponde al síndrome de la palabra codificada. En formato: [[G0,S2,S1,S0]]
 
-3) Canal con errores introducidos
-La palabra de 8 bits se pasa a través de un conjunto de switches o jumpers, donde el usuario puede simular la presencia de ruido en el canal.
-Si no se altera ningún bit → la palabra llega intacta.
-Si se altera 1 bit → el sistema podrá detectarlo y corregirlo.
-Si se alteran 2 bits → el sistema detectará el error doble, pero no lo corregirá.
+2) Receptor: (palabra codificada recibida)
+Entrada: Palabra de 8 bits correspondiente a la palabra recibida con el mismo formato del Hamming codificado: [[G0,W3,W2,W1,P2,W0,P1,P0]] del interruptor de 8 switch.
+Procesamiento:
+Este módulo recalcula el síndrome de la palabra recibida utilizando las paridades ingresadas en la palabra. De modo que solo se recalcula la paridad global [[G0]] de la palabra recibida. De modo que el único caso de error que excluye este código corresponde al error en bit global.
+Salida: Síndrome de la palabra transmitida [[G1,C2,C1,C0]] (utilizamos este formato para mayor comprensión del código).
 
-3) Decodificador (Receptor)
-Entrada: palabra de 8 bits recibida.
-Procesamiento: Se recalculan las paridades y se obtiene el síndrome de 3 bits.
-Si el síndrome = 000 → no hay error detectado en los 7 bits principales.
+3) Comparador:
+Entrada: Síndrome de la palabra codificada y transmitida.
+Procesamiento: 
+Con compuertas XOR se comparan ambos síndromes de modo que se obtienen una coordenada en binario de la posición del error en la palabra recibida.
+Casos:
+Síndrome = 000 → no hay error detectado en los 7 bits principales, excluye bit global.
 Si el síndrome ≠ 000 → indica la posición del bit con error.
-Se revisa el bit de paridad global P0:
-Si síndrome ≠ 000 y P0 falla → se corrige un error de 1 bit en la posición indicada.
-Si síndrome = 000 y P0 falla → se detecta un error de 2 bits (DED) que no puede corregirse.
-Si síndrome ≠ 000 y P0 correcto → el error está en P0.
-Finalmente, se extraen los 4 bits de datos corregidos (D1..D4).
+Se revisa el bit de paridad global G0:
+Si síndrome ≠ 000 y G0 falla → se corrige un error de 1 bit en la posición indicada.
+Si síndrome = 000 y G0 falla → se detecta un error de 2 bits (DED) que no puede corregirse.
+Salida: la posición de error que corresponde los bits comparados [eG, e2, e1, e0].
 
-4) Visualización
-Los 4 bits de datos corregidos se muestran en un conjunto de LEDs, permitiendo observar el valor binario restaurado.
-Un LED adicional indica si ocurrió un error doble detectado (DED). De forma opcional, el circuito puede mostrar tanto la palabra recibida como la palabra corregida, mediante un selector (switch).
+4) Corrector
+Entrada: posición de error y la palabra recibida
+Procesamiento:
+Utilizando un mux corrige los bits presentes en la palabra recibida por el switch de 8 puertos, ignorando el bit global, utilizando la posición del error anterior.
+Salida: devuelve una palabra de 5 bits que corresponde a los bits de datos que contiene la palabra recibida ya corregida.
+Si el error es corregible : [[0, W3,W2,W1,W0]] 
+Si contiene 2 errores: [[1,0,0,0,0]]
+
+5) Leds de la FPGA
+Recibe la palabra corregida y pinta los leds de la FPGA invirtiendo los bits.
+
+6) Conversor de Binario a Hexadecimal
+Entradas: Palabra corregida 
+Procedimiento:
+Realmente este modulo pasa de binario a otro número en binario que según ese orden pinta los leds del siete segmentos en hexadecimal. 
+Salida: leds que pinta el siete segmentos.
+
+7) multiplexor
+Entrada: recibe por entrada un reloj, un reset, la palabra corregida y la posición, ánodo y siete segmentos.
+Procedimiento:
+Utilizando una frecuencia de refresco de 27 kHz se realiza un divisor de frecuencia y un reset síncrono.
+```
+    // 1) Divisor de refresco (reset síncrono)
+    localparam int CNT_W = (REFRESH_DIV <= 1) ? 1 : $clog2(REFRESH_DIV);
+    logic [CNT_W-1:0] cnt, cnt_next;
+    logic             sel, sel_next;   // 0: dígito 0; 1: dígito 1
+    wire              tick = (cnt == REFRESH_DIV-1);
+
+    assign cnt_next = tick ? '0        : (cnt + 1'b1);
+    assign sel_next = tick ? ~sel      :  sel;
+
+    // Reset síncrono activo-bajo, (ternario):
+    always_ff @(posedge clk) begin
+        {cnt, sel} <= rst_n ? {cnt_next, sel_next}
+                            : { {CNT_W{1'b0}}, 1'b0 };
+    end
+```
+Seguidamente se llama al modulo de binario a hexadecimal dos veces con la intensión de guardar en una variable la posición del error y en otra el numero corregido en hexadecimal. Se puede hacer esto ya que la posición del error es un numero que va del 0 al 6 por lo que no afecta en nada utilizar la misma función. Otro aspecto para tomar en cuenta es que en caso de no presentar ningún error el siete segmentos muestra un guion (-) y si hay dos errores ambos siete segmentos muestra el guion.
+Para finalizar el multiplexor, se decide que señal sale de acuerdo al divisor de frecuencia. De modo que se intercalan los siete segmentos activos.
+```
+    // 3) Multiplex activo-bajo
+    // sel=0 -> anodo=2'b10 (enciende dígito 0), seven_w
+    // sel=1 -> anodo=2'b01 (enciende dígito 1), seven_e
+    assign anodo = sel ? 2'b01 : 2'b10;
+    assign seven = sel ? seven_e : seven_w;
+```
+Salida: valores para el ánodo y el siete segmentos.
+
+
 
 ### 3.2 Diagramas de bloques de cada subsistema
 
