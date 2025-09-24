@@ -255,3 +255,22 @@ Printing statistics.
 
 - Problema en el subsistema 7 para encender los dos siete segmentos al mismo tiempo. El problema se corrigió al definir un número de pin para el reset en la fpga.
 - Problema para corregir la palabra recibida. El problema estaba causado por una mala definición de los pines, se usó por error {} cuando de manera correcta es con [].
+
+## Bitacoras
+
+Juan Esteban Obando Perez
+
+![WhatsApp Image 2025-09-23 at 9 22 24 PM](https://github.com/user-attachments/assets/53d43af5-d44c-4f10-9c92-54cbe9f3448e)
+
+![WhatsApp Image 2025-09-23 at 9 22 24 PM (1)](https://github.com/user-attachments/assets/98bbc048-947c-4f05-a08a-45fef7e5b2ec)
+
+![WhatsApp Image 2025-09-23 at 9 22 25 PM](https://github.com/user-attachments/assets/5c4743c7-5d2a-4825-b930-2be01d6fbb8d)
+
+![WhatsApp Image 2025-09-23 at 9 22 25 PM (1)](https://github.com/user-attachments/assets/6e029313-a725-4099-89fb-f62d2ee88faa)
+
+![WhatsApp Image 2025-09-23 at 9 22 25 PM (2)](https://github.com/user-attachments/assets/30c2439c-425b-4ea3-b663-b9bb4e86de0d)
+
+
+
+
+Ismael Isaac Flores Mercado 
