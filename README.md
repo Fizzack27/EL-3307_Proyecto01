@@ -88,7 +88,8 @@ Para finalizar el multiplexor, se decide que señal sale de acuerdo al divisor d
 ```
     // 3) Multiplex activo-bajo
     // sel=0 -> anodo=2'b10 (enciende dígito 0), seven_w
-    // sel=1 -> anodo=2'b01 (enciende dígito 1), seven_e
+    // sel=1 -> anodo=2'b01 (enciende dígito 1), seven_e<img width="887" height="421" alt="Captura de Pantalla 2025-09-23 a la(s) 9 41 25 p  m" src="https://github.com/user-attachments/assets/069db67f-dee8-440d-b303-7c5cfdfd74b5" />
+
     assign anodo = sel ? 2'b01 : 2'b10;
     assign seven = sel ? seven_e : seven_w;
 ```
@@ -100,7 +101,7 @@ Salida: valores para el ánodo y el siete segmentos.
 
 Subsistema 1; prepara una referencia de cómo debería lucir la palabra codificada si no hubiera errores.
 
-<img width="802" height="354" alt="Captura de Pantalla 2025-09-23 a la(s) 8 46 18 p  m" src="https://github.com/user-attachments/assets/d85a3562-e0b7-4699-8b6c-e387b267d475" />
+<img width="887" height="421" alt="Captura de Pantalla 2025-09-23 a la(s) 9 41 25 p  m" src="https://github.com/user-attachments/assets/3596b463-4be9-4c17-b894-1f2b497e0604" />
 
 Subsistema 2; analiza la palabra recibida y obtiene un síndrome que refleja posibles errores.
 
@@ -170,7 +171,7 @@ Se puede simplicar a;
 LED = D3 * (D2 + D1)
 
 
-## 8. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
+## 5. Testbench ( Ejemplo y análisis de una simulación funcional del sistema completo, desde el estímulo de entrada hasta el manejo de los 7 segmentos)
 
 El printf del testbench imprimió Tiempo, conmutador_4, conmutador_8 y led.
 Se observa que el testbench cambió valores cada 10 000 ps (10 ns).
@@ -188,7 +189,7 @@ A la derecha, las formas de onda.
 <img width="1220" height="777" alt="Captura de Pantalla 2025-09-23 a la(s) 10 55 51 a  m" src="https://github.com/user-attachments/assets/a183c5f3-80b9-49ca-8ab9-2f05360a24ed" />
 
 
-## 9. Oscilador de anillo
+## 6. Oscilador de anillo
 Al realizar la medecion en el osciloscopio se determino una frecuencia de 9.7 MHz
 
 <img width="800" height="480" alt="DS04-3_inversores" src="https://github.com/user-attachments/assets/10fdd3ba-cf76-411b-bccb-b358e4304bd6" />
@@ -217,7 +218,7 @@ T = 62.34 nS
 Cada inversor tiene un tiempo de retatardo asociado, al disminuir la cantidad de inversores disminuye tambien el periodo de oscilacion, al usar una una pieza larga de alambre los factores fisicos no ideales de la misma se hacen mas presente, aumentando asi el periodo de oscilacion. 
 
 
-## 10. Consumo de recursos 
+## 7. Consumo de recursos 
 
 ```
 Printing statistics.
@@ -250,7 +251,7 @@ Printing statistics.
 
 ```
 
-## 11. Problemas encontrados durante el proyecto
+## 8. Problemas encontrados durante el proyecto
 
 - Problema en el subsistema 7 para encender los dos siete segmentos al mismo tiempo. El problema se corrigió al definir un número de pin para el reset en la fpga.
 - Problema para corregir la palabra recibida. El problema estaba causado por una mala definición de los pines, se usó por error {} cuando de manera correcta es con [].
