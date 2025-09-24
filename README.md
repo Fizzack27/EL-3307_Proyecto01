@@ -100,7 +100,7 @@ Salida: valores para el ánodo y el siete segmentos.
 
 Subsistema 1; prepara una referencia de cómo debería lucir la palabra codificada si no hubiera errores.
 
-<img width="601" height="246" alt="Captura de Pantalla 2025-09-22 a la(s) 2 12 58 p  m" src="https://github.com/user-attachments/assets/d2cf3b4b-cb47-4eaf-a82f-c9a061f7d1d2" />
+<img width="802" height="354" alt="Captura de Pantalla 2025-09-23 a la(s) 8 46 18 p  m" src="https://github.com/user-attachments/assets/d85a3562-e0b7-4699-8b6c-e387b267d475" />
 
 Subsistema 2; analiza la palabra recibida y obtiene un síndrome que refleja posibles errores.
 
@@ -108,11 +108,11 @@ Subsistema 2; analiza la palabra recibida y obtiene un síndrome que refleja pos
 
 Subsistema 3; localiza en qué bit está el error (si lo hay).
 
-<img width="607" height="230" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 13 p  m" src="https://github.com/user-attachments/assets/0a2939ef-41b9-43de-ba43-20b8953b866b" />
+<img width="890" height="332" alt="Captura de Pantalla 2025-09-23 a la(s) 8 45 12 p  m" src="https://github.com/user-attachments/assets/0bb0a64e-eeb0-4cdd-bf51-5e4c44700db3" />
 
 Subsistema 4; reconstruye los datos originales corrigiendo un error simple o detectando un error doble.
 
-<img width="614" height="254" alt="Captura de Pantalla 2025-09-22 a la(s) 2 14 47 p  m" src="https://github.com/user-attachments/assets/d9d8915e-8534-4cc9-aa55-838576b52ecb" />
+<img width="791" height="338" alt="Captura de Pantalla 2025-09-23 a la(s) 8 48 28 p  m" src="https://github.com/user-attachments/assets/0a9db792-0577-4263-a748-00c781c67d59" />
 
 Subsistema 5; despliega la palabra corregida y apaga LEDs si hubo error doble.
 
