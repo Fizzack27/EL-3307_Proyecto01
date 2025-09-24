@@ -252,8 +252,9 @@ Printing statistics.
 
 ## 11. Problemas encontrados durante el proyecto
 
-- Problema en el subsistema 7 para encender los dos siete segmentos al mismo tiempo. El problema se corrgido al definir un número de pin para el reset en la fpga.
-- Problema para corregir la palabra recibida. El problema estaba causado por una mala definicion de los pines, se uso por error {} cuando de manera correcta es con [].
+- Problema en el subsistema 7 para encender los dos siete segmentos al mismo tiempo. El problema se corrigió al definir un número de pin para el reset en la fpga.
+- Problema para corregir la palabra recibida. El problema estaba causado por una mala definición de los pines, se usó por error {} cuando de manera correcta es con [].
+
 
 ## Apendices:
 ### Apendice 1:
