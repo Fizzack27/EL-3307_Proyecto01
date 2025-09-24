@@ -22,17 +22,17 @@ El circuito implementa un sistema digital de transmisión y recepción de datos 
 El sistema se organiza en 7 grandes bloques:
 
 1) Codificador (palabra correcta)
-Entrada: una palabra binaria de 4 bits, seleccionada mediante interruptores de 4 switch [[W3,W2,W1,W0]].
+Entrada: una palabra binaria de 4 bits, seleccionada mediante interruptores de 4 switch [W3, W2, W1, W0].
 Procesamiento:
 Se calculan tres bits de paridad (P0,P1,P2) utilizando compuertas XOR. Se calcula un bit de paridad global G0
-Se forma una palabra de 8 bits en formato: [[G0,W3,W2,W1,P2,W0,P1,P0]] correspondiente al Hamming (7,4) codificado.  
-Salida: una palabra de 4 bits que corresponde al síndrome de la palabra codificada. En formato: [[G0,S2,S1,S0]]
+Se forma una palabra de 8 bits en formato: [G0, W3, W2, W1, P2, W0, P1, P0] correspondiente al Hamming (7,4) codificado.  
+Salida: una palabra de 4 bits que corresponde al síndrome de la palabra codificada. En formato: [G0, S2, S1, S0]
 
 2) Receptor: (palabra codificada recibida)
-Entrada: Palabra de 8 bits correspondiente a la palabra recibida con el mismo formato del Hamming codificado: [[G0,W3,W2,W1,P2,W0,P1,P0]] del interruptor de 8 switch.
+Entrada: Palabra de 8 bits correspondiente a la palabra recibida con el mismo formato del Hamming codificado: [G0, W3, W2, W1, P2, W0, P1, P0] del interruptor de 8 switch.
 Procesamiento:
-Este módulo recalcula el síndrome de la palabra recibida utilizando las paridades ingresadas en la palabra. De modo que solo se recalcula la paridad global [[G0]] de la palabra recibida. De modo que el único caso de error que excluye este código corresponde al error en bit global.
-Salida: Síndrome de la palabra transmitida [[G1,C2,C1,C0]] (utilizamos este formato para mayor comprensión del código).
+Este módulo recalcula el síndrome de la palabra recibida utilizando las paridades ingresadas en la palabra. De modo que solo se recalcula la paridad global [G0] de la palabra recibida. De modo que el único caso de error que excluye este código corresponde al error en bit global.
+Salida: Síndrome de la palabra transmitida [G1, C2, C1, C0] (utilizamos este formato para mayor comprensión del código).
 
 3) Comparador:
 Entrada: Síndrome de la palabra codificada y transmitida.
@@ -51,8 +51,8 @@ Entrada: posición de error y la palabra recibida
 Procesamiento:
 Utilizando un mux corrige los bits presentes en la palabra recibida por el switch de 8 puertos, ignorando el bit global, utilizando la posición del error anterior.
 Salida: devuelve una palabra de 5 bits que corresponde a los bits de datos que contiene la palabra recibida ya corregida.
-Si el error es corregible : [[0, W3,W2,W1,W0]] 
-Si contiene 2 errores: [[1,0,0,0,0]]
+Si el error es corregible : [0, W3, W2, W1, W0] 
+Si contiene 2 errores: [1, 0, 0, 0, 0]
 
 5) Leds de la FPGA
 Recibe la palabra corregida y pinta los leds de la FPGA invirtiendo los bits.
