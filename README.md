@@ -270,7 +270,25 @@ Juan Esteban Obando Perez
 
 ![WhatsApp Image 2025-09-23 at 9 22 25 PM (2)](https://github.com/user-attachments/assets/30c2439c-425b-4ea3-b663-b9bb4e86de0d)
 
-
-
-
 Ismael Isaac Flores Mercado 
+![BP01_01](images/ismael_bitacora/BP01_01.jpg)
+
+![BP01_02](images/ismael_bitacora/BP01_02.jpg)
+
+![BP01_03](images/ismael_bitacora/BP01_03.jpg)
+
+![BP01_04](images/ismael_bitacora/BP01_04.jpg)
+
+![BP01_05](images/ismael_bitacora/BP01_05.jpg)
+
+![BP01_06](images/ismael_bitacora/BP01_06.jpg)
+
+![BP01_07](images/ismael_bitacora/BP01_07.jpg)
+
+![BP01_08](images/ismael_bitacora/BP01_08.jpg)
+
+![BP01_09](images/ismael_bitacora/BP01_09.jpg)
+
+![BP01_10](images/ismael_bitacora/BP01_10.jpg)
+
+![BP01_11](images/ismael_bitacora/BP01_11.jpg)
